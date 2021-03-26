@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mcu Therm</title>
+</head>
+<body>
+    <h2 id="temp" />
+</body>
+</html>
+ 
+<script>
+    function subscribe() {
+        var source = new EventSource('/therm/stream');
+        var tempDiv = document.getElementById('temp');
+        source.onmessage = function(e) {
+            tempDiv.innerHTML = "Temparature: " + e.data + "°C";
+        };
+    };
+    subscribe();
+</script>
