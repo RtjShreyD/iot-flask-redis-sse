@@ -2,7 +2,7 @@ from flask import Flask, Blueprint, request, jsonify
 import flask
 import redis
  
-red = redis.StrictRedis.from_url('redis://localhost:6379/')
+red = redis.StrictRedis.from_url('redis://localhost:6379/0')
 therm_controller = Blueprint('therm', 'therm', url_prefix='/therm')
 
  

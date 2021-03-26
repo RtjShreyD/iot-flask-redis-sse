@@ -15,6 +15,6 @@ services:
     ports:
      - "5000:5000"
     volumes:
-     - ./src/webapp:/var/www/app:rw
+     - ./:/var/www/app:rw
     depends_on:
      - redis
