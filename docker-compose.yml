@@ -10,6 +10,18 @@ services:
       - "6379:6379"
  
   web:
+    build: ./services/web
+    command: python app.py
+    volumes:
+      - ./services/web/:/usr/src/app/
+    depends_on:
+      - redis
+    ports:
+      - 5000:5000
+    # env_file:
+    #   - ./.env.dev
+
+
     build: ./
     working_dir: /var/www/app
     ports:
