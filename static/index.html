@@ -14,7 +14,7 @@
         var source = new EventSource('/therm/stream');
         var tempDiv = document.getElementById('temp');
         source.onmessage = function(e) {
-            tempDiv.innerHTML = "Temparature: " + e.data + "°C";
+            tempDiv.innerHTML = "Temperature: " + e.data + "°C";
         };
     };
     subscribe();
